@@ -11,3 +11,16 @@ nav {
   position: fixed;
   top: 0;
 }
+.logo {
+  display: flex;
+  font-family: 'Bungee', sans-serif;
+}
+.new {
+  display: flex;
+  flex-direction: column;
+}
+.fa-solid {
+  display: flex;
+  color: red;
+  justify-content: center;
+}
