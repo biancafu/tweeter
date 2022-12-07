@@ -5,6 +5,8 @@ $(document).ready(function () {
     let result = 140 - length;
     if (result < 0) {
       $(this).closest("form").find("output").addClass("negative");
+    } else {
+      $(this).closest("form").find("output").removeClass("negative");
     }
     $(this).closest("form").find("output").text(result);
 
