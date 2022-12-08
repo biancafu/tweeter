@@ -7,6 +7,7 @@ $(document).ready(function () {
       $(this).closest("form").find("output").addClass("negative");
     } else {
       $(this).closest("form").find("output").removeClass("negative");
+
     }
     $(this).closest("form").find("output").text(result);
 
