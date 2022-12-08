@@ -14,6 +14,17 @@ $(document).ready(function () {
     }
   })
 
+  //stretch - scroll back up when button is hovered
+  $("#scroll-button").on("click", function () {
+    $("html, body").animate({scrollTop: 0}, 1000);
+    $(".new-tweet").show();
+  })
+  // when a tweet is submitted
+  $("form").on('submit', function (event) {
+    //stops page from reloading
+    event.preventDefault();
+    const formData = $(this).serialize();
+    const text = $("#tweet-text").val();
 
     //error messages if the text is empty or too long
     if (!text) {
