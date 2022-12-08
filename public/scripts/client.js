@@ -43,7 +43,14 @@ $(document).ready(function () {
     .then((data) => {
       renderTweets(data);
     })
-  }
+  };
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweet) {
     const user = tweet.user;
     const content = tweet.content;
@@ -59,7 +66,7 @@ $(document).ready(function () {
           </div>
           <span class="item b">${user.handle}</span>
         </div>
-        <div class="c"><p>${content.text}</p></div>
+        <div class="c"><p>${escape(content.text)}</p></div>
         <div class="bottom-panel">
           <div class="item d">${datetime}</div>
           <div class="item e">
