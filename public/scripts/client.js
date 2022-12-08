@@ -5,7 +5,16 @@
  */
 $(document).ready(function () {
 
+  $("form").on('submit' ,function(event) {
+    event.preventDefault();
+    const text = $(this).serialize();
+    $.ajax({
+      url: "/tweets/",
+      method: 'POST',
+      data: text
+    })
 
+  });
 
 const createTweetElement = function(tweet) {
   const user = tweet.user;
