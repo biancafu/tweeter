@@ -33,7 +33,7 @@ form {
 #tweet-button {
   display: flex;
   font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
+  background-color: rgb(255, 198, 74);
   color: #FFFFFF;
 
 }
@@ -62,9 +62,10 @@ form {
   width: 100%;
   border: solid;
   border-color: #545149;
+  /* background-color: white; */
 }
 .tweet-article:hover {
-  box-shadow: 5px 5px 2px 1px lightsteelblue;
+  box-shadow: 5px 5px 2px 1px gold;
 }
 
 .avatar {
@@ -93,7 +94,7 @@ form {
 
 .c {
   margin: 0 10px;
-  padding: 26px 22px 26px 22px;
+  padding: 0 22px 15px 22px;
   width: 98%;
   border-bottom: solid;
   border-color: #545149;
@@ -105,7 +106,7 @@ form {
 }
 .e {
   padding: 0 15px 0 0;
-  font-size: small; 
+  font-size: medium; 
 }
 .fa-flag:hover {
   color: gold;
