@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // --- our code goes here ---
   $(document).on('scroll', function() {
     if ($(this).scrollTop() >= 350) {
       $("nav").hide();
