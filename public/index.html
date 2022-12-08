@@ -24,6 +24,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer-scroller.js"></script>
   </head>
 
   <body>
@@ -31,7 +32,7 @@
     <nav>
       <span class="logo">tweeter</span>
       <div class="new">
-        <span ><b>Write</b> a new tweet</span>
+        <span><b>Write</b> a new tweet</span>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
@@ -49,18 +50,21 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
+    <section class="new-tweet" type="hidden">
       <!--<h2>Compose Tweet</h2>-->
       <form method="POST" action="/tweets/">
-        <label for="tweet-text">What are you humming about?</label>
+        <label for="tweet-text"><b>What are you humming about?</b></label>
         <textarea name="text" id="tweet-text"></textarea>
-        <div class="bottom-panel">
+        <div id="error-message" hidden></div>
+        <div class="bottom-panel1">
           <button type="submit" id="tweet-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
-
+    <button id="scroll-button" hidden>
+      <i class="fa-solid fa-angles-up"></i>
+    </button>
     <section class="tweets-container"> 
     </section>
   </main>
