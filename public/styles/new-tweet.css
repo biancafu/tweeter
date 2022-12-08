@@ -3,7 +3,7 @@ form {
   display: flex;
   flex-direction: column;
 
-  
+  width: 100%
 }
 
 .new-tweet {
@@ -11,12 +11,13 @@ form {
   flex-direction: column;
   align-items: center;
   
-  width: 882px;
+  padding-bottom: 30px;
+  width: 100%;
 }
 #tweet-text {
   display: flex;
 
-  width: 882px;
+  width: 100%;
   padding-top: 10px; 
   border-width: 0 0 2px 0;
   background-color: transparent;
@@ -27,7 +28,7 @@ form {
   display: flex;
   justify-content: space-between;
   
-  padding-top: 5px;
+  padding: 18px 22px;
 }
 #tweet-button {
   display: flex;
@@ -40,4 +41,78 @@ form {
   display: flex;
   font-family: 'Bungee', sans-serif;
 
+}
+.negative {
+  color: red;
+}
+
+.tweets-container {
+  display: flex;
+  flex-direction: column-reverse;
+
+  width: 100%;
+}
+.tweet-article {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 15px;
+  padding: 0.3em;
+  box-shadow: none;
+  width: 100%;
+  border: solid;
+  border-color: #545149;
+}
+.tweet-article:hover {
+  box-shadow: 5px 5px 2px 1px lightsteelblue;
+}
+
+.avatar {
+  padding: 0 15px;
+}
+.item {
+  display: flex;
+}
+.fa-face-smile {
+  padding: 3px 15px;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+
+}
+.a {
+  align-items: center;
+}
+.b {
+  align-items: center;
+
+  padding-right: 5px;
+  color:lightsteelblue;
+}
+
+.c {
+  margin: 0 10px;
+  padding: 26px 22px 26px 22px;
+  width: 98%;
+  border-bottom: solid;
+  border-color: #545149;
+  word-wrap: break-word;
+}
+.d {
+  padding: 0 0 0 15px;
+  font-size: medium;
+}
+.e {
+  padding: 0 15px 0 0;
+  font-size: small; 
+}
+.fa-flag:hover {
+  color: gold;
+}
+.fa-retweet:hover {
+  color: gold;
+}
+.fa-heart:hover {
+  color: gold;
 }

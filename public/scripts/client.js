@@ -7,11 +7,31 @@ $(document).ready(function () {
 
   $("form").on('submit', function (event) {
     event.preventDefault();
-    const text = $(this).serialize();
+    const formData = $(this).serialize();
+    const text = $("#tweet-text").val();
+    if (!text) {
+      alert("tweet cannot be empty!");
+      return;
+    } else if (text.length > 140) {
+      console.log(text.length);
+      alert("text length exceeded limit!");
+      return;
+    }
     $.ajax({
       url: "/tweets/",
       method: 'POST',
-      data: text
+      data: formData
+    })
+    .then(() => {
+      $.ajax({
+        url: "/tweets/",
+        method: 'GET',
+      })
+      .then((data) => {
+        renderTweets(data);
+        $("#tweet-text").val('');
+        $(".counter").val('140');
+      })
     })
   });
 
@@ -21,7 +41,6 @@ $(document).ready(function () {
       method: 'GET',
     })
     .then((data) => {
-      
       renderTweets(data);
     })
   }
@@ -40,7 +59,7 @@ $(document).ready(function () {
           </div>
           <span class="item b">${user.handle}</span>
         </div>
-        <div class="item c">${content.text}</div>
+        <div class="c"><p>${content.text}</p></div>
         <div class="bottom-panel">
           <div class="item d">${datetime}</div>
           <div class="item e">
