@@ -5,23 +5,34 @@
  */
 $(document).ready(function () {
 
-  $("form").on('submit', function (event) {
-    event.preventDefault();
-    const formData = $(this).serialize();
-    const text = $("#tweet-text").val();
+  //stretch - slide up and down when the write new tweet is clicked
+  $(".new").on("click", function () {
+    if ($(".new-tweet").first().is( ":hidden")) {
+      $(".new-tweet").slideDown();
+    } else {
+      $(".new-tweet").slideUp();
+    }
+  })
+
+
+    //error messages if the text is empty or too long
     if (!text) {
-      alert("tweet cannot be empty!");
+      $("#error-message").text('!!! cannot submit empty tweet !!!');
+      $("#error-message").show();
       return;
     } else if (text.length > 140) {
-      console.log(text.length);
-      alert("text length exceeded limit!");
+      $("#error-message").text('!!! text length exceeded limit !!!');
+      $("#error-message").show();
       return;
+    } else {
+      $("#error-message").text('');
     }
     $.ajax({
       url: "/tweets/",
       method: 'POST',
       data: formData
     })
+    //if tweet was succesfully posted, the tweet should show below right away
     .then(() => {
       $.ajax({
         url: "/tweets/",
@@ -35,6 +46,7 @@ $(document).ready(function () {
     })
   });
 
+  //load tweet to get all previous tweets and render them
   const loadTweets = function () {
     $.ajax({
       url: "/tweets/",
@@ -45,6 +57,7 @@ $(document).ready(function () {
     })
   };
 
+  //escape function to prevent cross site scripting by untrust text
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -56,6 +69,7 @@ $(document).ready(function () {
     const content = tweet.content;
     const time = tweet.created_at;
     const datetime = timeago.format(time);
+
 
     const $tweet = $(`
   <article class="tweet-article">
@@ -91,32 +105,6 @@ $(document).ready(function () {
       $('.tweets-container').append($tweet_html)
     }
   }
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
   loadTweets();
 
 
