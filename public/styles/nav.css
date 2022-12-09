@@ -20,6 +20,11 @@ nav {
   display: flex;
   flex-direction: column;
 }
+.new-button {
+  border-color: transparent;
+  background-color: rgb(255, 198, 74);
+  color: white;
+}
 .fa-solid {
   display: flex;
   padding: 5px 7px;
