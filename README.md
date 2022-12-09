@@ -37,16 +37,12 @@ $ npm run local
 ## Final Product
 Tweeter is capable of handling mobile and desktop devices. There are two different layout.<br />
 Mobile Page:<br />
-!["New tweet text area is hidden"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_new_tweet_form_%20hidden.png)
-
-!["New tweet text area is showing"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_new_tweet_showing.png)
-
-!["scroll button showing"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_page_scroll_button.png)
+- When new tweet text area is hidden: !["New tweet text area is hidden"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_new_tweet_form_%20hidden.png)
+- When new tweet text area is showing: !["New tweet text area is showing"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_new_tweet_showing.png)
+- When scroll button is showing: !["scroll button showing"](https://github.com/biancafu/tweeter/blob/master/docs/mobile_page_scroll_button.png)
 
 Desktop Page:<br />
-!["New tweet text area is hidden"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_new_tweet_hidden.png)
-
-!["New tweet text area is showing"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_new_tweet_showing.png)
-
-!["url detail page"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_scroll_button.png)
+- When new tweet text area is hidden: !["New tweet text area is hidden"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_new_tweet_hidden.png)
+- When new tweet text area is showing: !["New tweet text area is showing"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_new_tweet_showing.png)
+- When scroll button is showing: !["scroll button showing"](https://github.com/biancafu/tweeter/blob/master/docs/desktop_scroll_button.png)
 
