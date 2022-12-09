@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,16 +15,14 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 3.5em 2em;
   background-color: #fffee5;
   background-image: url(http://www.transparenttextures.com/patterns/food.png);
 }
-
