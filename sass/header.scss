@@ -1,0 +1,63 @@
+$nav-color: rgb(255, 198, 74); 
+$background-color: #fffee5; 
+$background-image: url(http://www.transparenttextures.com/patterns/food.png);
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 30px;
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  background: $nav-color;
+
+}
+
+.header-avatar {
+  height: 230px;
+}
+
+/* desktop style */
+@media only screen and (min-width: 900px) {
+  header {
+    justify-content: center;
+    align-items: center;
+
+    height: 380px;
+    width: 35%;
+    margin: 100px 80px 0px 100px;
+    background-color: $background-color;  
+    background-image: $background-image;
+  }
+
+  .header-avatar {
+    height: 200px;
+
+  }
+
+  .header-name {
+    height: 15px;
+    font-size: smaller;
+  }
+
+  .desktop-screen {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 120px;
+    background-color: $background-color   
+  }
+
+  .container {
+    background-image: none;
+    background-color: transparent;
+    width: 65%;
+  }
+
+  .tweet-article {
+    background-image: $background-image;
+  }
+}

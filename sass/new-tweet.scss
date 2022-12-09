@@ -1,0 +1,202 @@
+$nav-color: rgb(255, 198, 74); 
+$font-stack: 'Bungee', sans-serif;
+$outline-color: #545149;
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.new-tweet {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+#tweet-text {
+  display: flex;
+
+  width: 100%;
+  padding-top: 20px;
+  border-width: 0 0 3px 0;
+  border-color: $outline-color;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.bottom-panel1 {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 22px;
+}
+
+#error-message {
+  padding: 0 22px;
+  color: red;
+  font-weight: bold;
+}
+
+.bottom-panel {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 18px 22px;
+}
+
+#tweet-button {
+  display: flex;
+  font-family: $font-stack;
+  background-color: $nav-color;
+  color: #FFFFFF;
+
+}
+
+.counter {
+  display: flex;
+  font-family: $font-stack;
+
+}
+
+.negative {
+  color: red;
+}
+
+.tweets-container {
+  display: flex;
+  flex-direction: column-reverse;
+
+  width: 100%;
+}
+
+.tweet-article {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1.5em;
+  padding: 0.3em;
+  box-shadow: none;
+  width: 100%;
+  border: solid;
+  border-color: $outline-color;
+}
+
+.tweet-article:hover {
+  box-shadow: 5px 5px 2px 1px gold;
+}
+
+.avatar {
+  padding: 0 15px;
+}
+
+.item {
+  display: flex;
+}
+
+.fa-face-smile {
+  padding: 3px 15px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.a {
+  align-items: center;
+}
+
+.b {
+  align-items: center;
+
+  font-weight: bold;
+  padding-right: 5px;
+  color: #5451496d;
+}
+
+.c {
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 0 22px 15px 22px;
+  width: 98%;
+  border-bottom: solid;
+  border-color: $outline-color;
+  word-wrap: break-word;
+}
+
+.d {
+  padding: 0 0 0 15px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.e {
+  padding: 0 15px 0 0;
+  font-size: medium;
+}
+
+.fa-flag:hover {
+  color: gold;
+}
+
+.fa-retweet:hover {
+  color: gold;
+}
+
+.fa-heart:hover {
+  color: gold;
+}
+
+.fa-angles-down {
+  -webkit-animation: mover 0.7s infinite alternate;
+  animation: mover 0.7s infinite alternate;
+}
+
+.fa-angles-down {
+  -webkit-animation: mover 0.7s infinite alternate;
+  animation: mover 0.7s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+#scroll-button {
+  padding: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $outline-color;
+  border-color: transparent;
+  color: white;
+  border-radius: 50%;
+  position: fixed;
+}
+
+#scroll-button:hover {
+  color: white;
+  background-color: gold;
+}
