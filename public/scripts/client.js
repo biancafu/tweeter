@@ -31,6 +31,7 @@ $(document).ready(function () {
     })
       //if tweet was succesfully posted, the tweet should show below right away
       .then(() => {
+        
         $.ajax({
           url: "/tweets/",
           method: 'GET',
@@ -40,6 +41,15 @@ $(document).ready(function () {
             $("#tweet-text").val('');
             $(".counter").val('140');
           })
+
+        //since clearing out the tweets-container is visible when loading,
+        //instead of clearing the whole tweet section and calling loadtweets,
+        //I decided to get only the new tweet so that the clearing is not visible. below is the code that clears the tweet:
+
+        // $(".tweets-container").empty();
+        // $("#tweet-text").val('');
+        // $(".counter").val('140');
+        // loadTweets();
       })
   });
 
