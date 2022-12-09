@@ -36,7 +36,7 @@ $(document).ready(function () {
           method: 'GET',
         })
           .then((data) => {
-            renderTweets(data);
+            renderTweets(data.slice(data.length-1));
             $("#tweet-text").val('');
             $(".counter").val('140');
           })
