@@ -26,23 +26,3 @@ body {
   background-color: #fffee5;
   background-image: url(http://www.transparenttextures.com/patterns/food.png);
 }
-
-/* desktop style */
-@media only screen and (min-width: 900px) {
-  header {
-    justify-content: center;
-    align-items: center;
-    width: 35%;
-    background-color: #fffee5;
-    background-image: url(http://www.transparenttextures.com/patterns/food.png);
-  }
-
-  .header-avatar {
-    height: 200px;
-  }
-
-  /* .container {
-    justify-content: flex-end;
-    width: 65%;
-  } */
-}
