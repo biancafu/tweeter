@@ -5,20 +5,6 @@
  */
 $(document).ready(function () {
 
-  //stretch - slide up and down when the write new tweet is clicked
-  $(".new").on("click", function () {
-    if ($(".new-tweet").first().is( ":hidden")) {
-      $(".new-tweet").slideDown();
-    } else {
-      $(".new-tweet").slideUp();
-    }
-  })
-
-  //stretch - scroll back up when button is hovered
-  $("#scroll-button").on("click", function () {
-    $("html, body").animate({scrollTop: 0}, 1000);
-    $(".new-tweet").show();
-  })
   // when a tweet is submitted
   $("form").on('submit', function (event) {
     //stops page from reloading
@@ -43,18 +29,18 @@ $(document).ready(function () {
       method: 'POST',
       data: formData
     })
-    //if tweet was succesfully posted, the tweet should show below right away
-    .then(() => {
-      $.ajax({
-        url: "/tweets/",
-        method: 'GET',
+      //if tweet was succesfully posted, the tweet should show below right away
+      .then(() => {
+        $.ajax({
+          url: "/tweets/",
+          method: 'GET',
+        })
+          .then((data) => {
+            renderTweets(data);
+            $("#tweet-text").val('');
+            $(".counter").val('140');
+          })
       })
-      .then((data) => {
-        renderTweets(data);
-        $("#tweet-text").val('');
-        $(".counter").val('140');
-      })
-    })
   });
 
   //load tweet to get all previous tweets and render them
@@ -63,9 +49,9 @@ $(document).ready(function () {
       url: "/tweets/",
       method: 'GET',
     })
-    .then((data) => {
-      renderTweets(data);
-    })
+      .then((data) => {
+        renderTweets(data);
+      })
   };
 
   //escape function to prevent cross site scripting by untrust text
@@ -74,7 +60,7 @@ $(document).ready(function () {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
+  //creating html tweet element for each tweet
   const createTweetElement = function (tweet) {
     const user = tweet.user;
     const content = tweet.content;
@@ -83,40 +69,53 @@ $(document).ready(function () {
 
 
     const $tweet = $(`
-  <article class="tweet-article">
-        <div class="bottom-panel">
-          <div class="user">
-            <img class="avatar" src="${user.avatars}"></i>
-            <span class="item a">${user.name}</span>
-          </div>
-          <span class="item b">${user.handle}</span>
-        </div>
-        <div class="c"><p>${escape(content.text)}</p></div>
-        <div class="bottom-panel">
-          <div class="item d">${datetime}</div>
-          <div class="item e">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </div>
-
-      </article>
+      <article class="tweet-article">
+            <div class="bottom-panel">
+              <div class="user">
+                <img class="avatar" src="${user.avatars}"></i>
+                <span class="item a">${user.name}</span>
+              </div>
+              <span class="item b">${user.handle}</span>
+            </div>
+            <div class="c"><p>${escape(content.text)}</p></div>
+            <div class="bottom-panel">
+              <div class="item d">${datetime}</div>
+              <div class="item e">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+          </article>
   `);
     return $tweet;
   }
-
+  //rendering all tweets that are passed
   const renderTweets = function (tweets) {
     // loops through tweets
     for (const tweet of tweets) {
-
       // calls createTweetElement for each tweet
       const $tweet_html = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       $('.tweets-container').append($tweet_html)
     }
   }
+  //get the previous tweets 
   loadTweets();
 
 
+  //stretch - slide up and down when the write new tweet is clicked
+  $(".new").on("click", function () {
+    if ($(".new-tweet").first().is(":hidden")) {
+      $(".new-tweet").slideDown();
+    } else {
+      $(".new-tweet").slideUp();
+    }
+  })
+
+  //stretch - scroll back up when button is hovered
+  $("#scroll-button").on("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    $(".new-tweet").show();
+  })
 });
